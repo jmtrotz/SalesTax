@@ -29,14 +29,8 @@ This is the class that performs the sales tax calculations for index.aspx.cs.
 ## IF THE APP FAILS TO LAUNCH
 1. Close Visual Studio
 2. Open "SalesTax.csproj" with a text editor (Notepad++ works great)
-3. Search for:
-"<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-</Target>"
-### 4. Delete it, save the file, and try again
+3. Search for Target tags with a name property of "EnsureNuGetPackageBuildImports"
+4. Delete the tags (including everyhting between them), save the file, and try again
 
 ## 403.14 Errors
 If you get a 403 error while trying to launch the app, in Visual Studio right click on index.aspx and select "Set As Start Page" from the menu.
