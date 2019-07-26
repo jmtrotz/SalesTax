@@ -1,0 +1,83 @@
+﻿/**
+    CSS style sheet for my solution to DealerOn's coding test
+    problem number two: Sales Taxes.
+    Author: Jeffrey Trotz
+    Date: 7/24/2019
+*/
+
+/*
+    Styles for the body of the page (mostly
+    just a background image)
+*/
+body
+{
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+}
+
+/*
+    Styles for the container div so the entry
+    form/results divs can be centered and to
+    make the page responsive
+*/
+#outerDiv
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 150px;
+}
+
+/*
+    Styles for the inner div that contains the
+    data entry form
+*/
+#innerDiv
+{
+    top: 0%;
+}
+
+/*
+    Styles for div where the results are show
+*/
+#resultDiv 
+{
+    top: 65%;
+}
+
+/*
+    Common styles shared by all divs
+*/
+.div 
+{
+    height: auto;
+    width: auto;
+    position: absolute;
+    padding: 10px;
+    background-color: #808080;
+    border-radius: 10px;
+    font-family: 'Comic Sans MS';
+    color: #ffffff;
+}
+
+/*
+    Styles for buttons
+*/
+.button 
+{
+    height: auto;
+    background-color: #9fc98f;
+    color: #ffffff;
+    border-radius: 10px;
+    white-space: normal;
+    max-width: 200px;
+}
+
+/*
+    Styles for text boxes
+*/
+.textBox
+{
+    border-radius: 10px;
+    padding: 3px;
+}
