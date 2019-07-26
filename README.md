@@ -19,23 +19,23 @@ This is the jQuery script that animates the data entry form across the screen wh
 ### Calculator.cs
 This is the class that performs the sales tax calculations for index.aspx.cs.
 
-## To run the application:
-### 1. Clone the repository
-### 2. Unzip the file
-### 3. Start Visual Studio and select "Open a project or solution"
-### 4. Navigate to the downloaded file and double click on "SalesTax.csproj"
-### 5. Click on "IIS Express (browser name)" at the top center of Visual Studio and it will launch in your browser
+## To run the application
+1. Clone the repository
+2. Unzip the file
+3. Start Visual Studio and select "Open a project or solution"
+4. Navigate to the downloaded file and double click on "SalesTax.csproj"
+5. Click on "IIS Express (browser name)" at the top center of Visual Studio and it will launch in your browser
 
 ## IF THE APP FAILS TO LAUNCH
-### 1. Close Visual Studio
-### 2. Open "SalesTax.csproj" with a text editor (Notepad++ works great)
-### 3. Search for:
-<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+1. Close Visual Studio
+2. Open "SalesTax.csproj" with a text editor (Notepad++ works great)
+3. Search for:
+"<Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-</Target>
+</Target>"
 ### 4. Delete it, save the file, and try again
 
 ## 403.14 Errors
