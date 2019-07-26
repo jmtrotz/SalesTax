@@ -8,7 +8,7 @@ Since this app is pretty basic, all it consists of is one active server page, a 
 This is the Active Server Page that contains the markup code to design the user interface.
 
 ### index.aspx.cs
-This is the codebehind page for index.aspx. It collects and verifies data from the input form, then passes it to Calculator object to compute taxes on the item that was entered.
+This is the codebehind page for index.aspx. It collects and verifies data from the input form, then passes it to the Calculator object to compute taxes on the item that was entered.
 
 ### styleSheet.css
 This is the CSS style sheet that adds some "pazazz" to the user interface.
@@ -29,8 +29,9 @@ This is the class that performs the sales tax calculations for index.aspx.cs.
 ## IF THE APP FAILS TO LAUNCH
 1. Close Visual Studio
 2. Open "SalesTax.csproj" with a text editor (Notepad++ works great)
-3. Search for Target tags with a name property of "EnsureNuGetPackageBuildImports"
-4. Delete the tags (including everyhting between them), save the file, and try again
+3. Search for a Target tag with the name property set to "EnsureNuGetPackageBuildImports" (should be near the bottom)
+4. Delete the tags (including everything between them)
+5. Save the file and try again
 
 ## 403.14 Errors
 If you get a 403 error while trying to launch the app, in Visual Studio right click on index.aspx and select "Set As Start Page" from the menu.
