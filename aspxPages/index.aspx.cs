@@ -74,19 +74,8 @@ namespace SalesTax.WebPages
                     name = "Imported " + name;
                 }
 
-                // If it's the first time the screen is being updated, then use a "special" 
-                // version of the screen update method to avoid an unessesary line break
-                if (firstTime)
-                {
-                    firstTime = false;
-                    FirstScreenUpdate(name, finalPrice, totalQuantity);
-                }
-
-                // If not, then just use the standard screen update method
-                else
-                {
-                    UpdateScreen(name, finalPrice, totalQuantity);
-                }
+                // Call the method to update the screen
+                UpdateScreen(name, finalPrice, totalQuantity);
             }
         }
 
@@ -129,64 +118,61 @@ namespace SalesTax.WebPages
         }
 
         /**
-         * This method is used when it's the first time the information is being
-         * added to the screen. The main difference between this one and the
-         * standard screen update method is this method does not add a line break
-         * before the item name since it is not needed because there are are no
-         * items currently being displayed.
-         * @param name Name of the item
-         * @param price Price of the item
-         * @param quantity Amount of the item
-         */
-        private void FirstScreenUpdate(string name, double price, int quantity)
-        {
-            // If there's more than one, then use a different display format
-            if (quantity > 1)
-            {
-                lblResults.Text = name + ": $" + price.ToString("f2") + " (" +
-                    quantity + " @ " + (price / quantity).ToString("f2") + ")";
-
-                lblTaxTotal.Text = "<br/>Sales Tax: $" + taxTotal.ToString("f2");
-                lblOrderTotal.Text = "<br/>Total: $" + saleTotal.ToString("f2");
-            }
-
-            // If not, then just stick to the standard format
-            else
-            {
-                lblResults.Text = name + ": $" + price.ToString("f2");
-                lblTaxTotal.Text = "<br/>Sales Tax: $" + taxTotal.ToString("f2");
-                lblOrderTotal.Text = "<br/>Total: $" + saleTotal.ToString("f2");
-            }
-        }
-
-        /**
-         * This method is used whenever it's NOT the first time the information is 
-         * being added to the screen. The main difference between this one and the
-         * "first time" screen update method is this method adds a line break
-         * before the item name so information will be displayed below the current
-         * item(s) in the list
+         * This method is used to update information on the screen, like the
+         * running sale/tax total, to add an item to the list, etc.
          * @param name Name of the item
          * @param price Price of the item
          * @param quantity Amount of the item
          */
         private void UpdateScreen(string name, double price, int quantity)
         {
-            // If there's more than one, then use a different display format
-            if (quantity > 1)
+            // If it's the first time the screen is being updated, then use a "special" 
+            // version of this method to avoid an unessesary line break
+            if (firstTime)
             {
-                lblResults.Text += "<br/>" + name + ": $" + price.ToString("f2") + " (" +
-                    quantity + " @ " + (price / quantity).ToString("f2") + ")";
+                // Set firstTime to false so the code in this 'if' block isn't
+                // used again until the app is restarted
+                firstTime = false;
 
-                lblTaxTotal.Text = "<br/>Sales Tax: $" + taxTotal.ToString("f2");
-                lblOrderTotal.Text = "<br/>Total: $" + saleTotal.ToString("f2");
+                // If there's more than one, then use a different display format
+                if (quantity > 1)
+                {
+                    lblResults.Text = name + ": $" + price.ToString("f2") + " (" +
+                        quantity + " @ " + (price / quantity).ToString("f2") + ")";
+
+                    lblTaxTotal.Text = "<br/>Sales Tax: $" + taxTotal.ToString("f2");
+                    lblOrderTotal.Text = "<br/>Total: $" + saleTotal.ToString("f2");
+                }
+
+                // If not, then just stick to the standard format
+                else
+                {
+                    lblResults.Text = name + ": $" + price.ToString("f2");
+                    lblTaxTotal.Text = "<br/>Sales Tax: $" + taxTotal.ToString("f2");
+                    lblOrderTotal.Text = "<br/>Total: $" + saleTotal.ToString("f2");
+                }
             }
 
-            // If not, then just stick to the standard format
+            // If it's not the first time, then just use the standard version
             else
             {
-                lblResults.Text += "<br/>" + name + ": $" + price.ToString("f2");
-                lblTaxTotal.Text = "<br/>Sales Tax: $" + taxTotal.ToString("f2");
-                lblOrderTotal.Text = "<br/>Total: $" + saleTotal.ToString("f2");
+                // If there's more than one, then use a different display format
+                if (quantity > 1)
+                {
+                    lblResults.Text += "<br/>" + name + ": $" + price.ToString("f2") + " (" +
+                        quantity + " @ " + (price / quantity).ToString("f2") + ")";
+
+                    lblTaxTotal.Text = "<br/>Sales Tax: $" + taxTotal.ToString("f2");
+                    lblOrderTotal.Text = "<br/>Total: $" + saleTotal.ToString("f2");
+                }
+
+                // If not, then just stick to the standard format
+                else
+                {
+                    lblResults.Text += "<br/>" + name + ": $" + price.ToString("f2");
+                    lblTaxTotal.Text = "<br/>Sales Tax: $" + taxTotal.ToString("f2");
+                    lblOrderTotal.Text = "<br/>Total: $" + saleTotal.ToString("f2");
+                }
             }
         }
 
