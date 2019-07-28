@@ -25,13 +25,3 @@ This is the class that performs the sales tax calculations for index.aspx.cs.
 3. Start Visual Studio and select "Open a project or solution"
 4. Navigate to the downloaded file and double click on "SalesTax.csproj"
 5. Click on "IIS Express (browser name)" at the top center of Visual Studio and it will launch in your browser
-
-## IF THE APP FAILS TO LAUNCH
-1. Close Visual Studio
-2. Open "SalesTax.csproj" with a text editor (Notepad++ works great)
-3. Search for a Target tag with the name property set to "EnsureNuGetPackageBuildImports" (should be near the bottom)
-4. Delete the tags (including everything between them)
-5. Save the file and try again
-
-## 403.14 Errors
-If you get a 403 error while trying to launch the app, in Visual Studio right click on index.aspx and select "Set As Start Page" from the menu.
